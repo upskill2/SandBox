@@ -26,5 +26,6 @@
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: net.sourceforge.jregex:jregex:1.2_01" level="project" />
   </component>
 </module>

@@ -1,20 +1,42 @@
 package leetcode;
 
+import java.util.ArrayList;
+
 public class ExcelSheetColumnTitle {
 
     public String convertToTitle(int columnNumber) {
 
-       String str = "";
+        StringBuilder sb = new StringBuilder();
+        int initialNumber = columnNumber;
+        long tempInt = 0;
+        long reminder = columnNumber;
+        long tempIndex = columnNumber;
 
-       char temp = ' ';
+        ArrayList<Integer> al = new ArrayList();
 
-        for (int i = 0; i < columnNumber+1; i+=25) {
-            temp= (char) (columnNumber + 64);
+        while (reminder > 0) {
+
+            if ((reminder - (columnNumber / 26) * 26) == 0) {
+                tempInt = 26;  //step 1
+            } else tempInt = reminder - (columnNumber / 26) * 26;
+
+            if ((tempInt * 26 + tempInt) <= initialNumber) {
+                tempIndex = tempInt * 26 + tempInt;   //step 2 == index
+            } else tempIndex = 0;
+
+            al.add((int) tempInt);
+            columnNumber /= 26;
+
+                reminder /= 26;
+
         }
 
-        System.out.println(temp);
+        for (int a : al
+        ) {
+            sb.append((char) (a + 64));
+        }
 
-    return str;
+        return sb.reverse().toString();
 
     }
 
@@ -24,10 +46,12 @@ public class ExcelSheetColumnTitle {
         int convertToTitle = 1;
         int convertToTitle0 = 28; // 0-27=A //27*27=729=AA
         int convertToTitle1 = 701;
+        int convertToTitle2 = 2147483647;
 
         System.out.println(e.convertToTitle(convertToTitle));
         System.out.println(e.convertToTitle(convertToTitle0));
         System.out.println(e.convertToTitle(convertToTitle1));
+        System.out.println(e.convertToTitle(convertToTitle2));
 
     }
 
