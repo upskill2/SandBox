@@ -8,6 +8,8 @@ public class IntersectionOfTwoArraysII {
 
     public int[] intersect(int[] nums1, int[] nums2) {
 
+        List<Integer> list = new ArrayList<>();
+
         Map<Integer,Integer> map1 = new HashMap<>();
         for (int k : nums1) {map1.put(k, map1.getOrDefault(k,0)+1);}
 
@@ -17,14 +19,15 @@ public class IntersectionOfTwoArraysII {
         Map <Integer,Integer> result = new HashMap(map1);
         result.keySet().retainAll(map2.keySet());
 
-        int[] resultFinal = new int[result.size()];
+        list.addAll(result.keySet());
+        list.addAll(result.values());
 
-        int idx = 0;
-        for (int k : result.keySet()) {
-            resultFinal[idx++] = k;
-        }
+        int[] resultFinal = list.stream().mapToInt(k->k).toArray();
+
+
+
         System.out.println(Arrays.toString(resultFinal));
-        return nums1;
+        return resultFinal;
 
     }
 
@@ -34,7 +37,11 @@ public class IntersectionOfTwoArraysII {
         int[] nums1 = {1, 2, 2, 1};
         int[] nums2 = {2, 2};
 
-        inter.intersect(nums1,nums2);
+        int[] nums3 = {4, 9, 5};
+        int[] nums4 = {9, 4, 9, 8, 4};
+
+        //inter.intersect(nums1,nums2);
+        inter.intersect(nums3,nums4);
     }
 
 }
