@@ -7,11 +7,9 @@ public class GuessNumberHigherOrLower extends GuessGame {
 
     public int guessNumber(int n) {
 
-        long result = 0;
-        long mid = 0;
-        long low = 1;
-
-        result=n;
+        int result = n;
+        int mid = 0;
+        int low = 1;
 
 
 
@@ -19,7 +17,7 @@ public class GuessNumberHigherOrLower extends GuessGame {
             if (guess((int) result) == -1) {  //higher -1
                 result = (result + low) / 2;
 
-            } else if (guess((int) result) == 1) {
+            } else  {
                 low = result;
                 result = result + 1;
                 mid=(result+low)/2;
@@ -33,7 +31,7 @@ public class GuessNumberHigherOrLower extends GuessGame {
     }
 
     public static void main(String[] args) {
-        int n = 10;
+        int n = 921239930;
 
         GuessNumberHigherOrLower gn = new GuessNumberHigherOrLower();
         gn.guessNumber(n);
