@@ -1,10 +1,9 @@
-package leetcode.tests;
+package leetcode;
 
 import leetcode.BaseballGame;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BaseballGameTest {
 

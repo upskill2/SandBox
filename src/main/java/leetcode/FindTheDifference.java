@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -59,8 +58,8 @@ public class FindTheDifference {
         String s2 = "";
         String t2 = "y";
 
-        //   fd.findTheDifference(s, t);
-        //    fd.findTheDifference(s1, t1);
+          fd.findTheDifference(s, t);
+            fd.findTheDifference(s1, t1);
         fd.findTheDifference(s2, t2);
     }
 

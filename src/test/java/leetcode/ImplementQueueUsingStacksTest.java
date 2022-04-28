@@ -1,4 +1,4 @@
-package leetcode.tests;
+package leetcode;
 
 import leetcode.ImplementQueueUsingStacks;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ImplementQueueUsingStacksTest {
 
-    @Test
+   @Test
    public void ImplementQueueUsingStacksTest(){
         ImplementQueueUsingStacks is = new ImplementQueueUsingStacks();
         ImplementQueueUsingStacks.MyQueue myQueue = is.new MyQueue();
