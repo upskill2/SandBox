@@ -1,3 +1,4 @@
+leetcode\NumberOfRecentCalls$RecentCounter.class
 leetcode\SingleNumber.class
 w3resource\Maximum.class
 leetcode\ArrangingCoins.class
@@ -6,6 +7,7 @@ w3resource\OddElement.class
 leetcode\VersionControl.class
 leetcode\ClimbingStairs.class
 leetcode\GuessNumberHigherOrLower.class
+leetcode\LexicographicalComparator.class
 leetcode\Palindrome.class
 leetcode\SelfDividingNumbers.class
 leetcode\RemoveLinkedListElements.class
@@ -13,6 +15,7 @@ oca\LieDetector.class
 leetcode\RomanNumber.class
 leetcode\tests\SinglyLinkedList$ListNode.class
 leetcode\RemoveDuplicatesFromSortedArray.class
+leetcode\ReorderDataInLogFiles.class
 leetcode\ImplementStackUsingQueues$MyStack.class
 Parser.class
 leetcode\PascalsTriangle.class
@@ -72,6 +75,7 @@ leetcode\resources\ThreadImpl.class
 leetcode\IntersectionOfTwoArrays.class
 leetcode\HappyNumber.class
 I1.class
+leetcode\NumberOfRecentCalls.class
 leetcode\Sqrt.class
 Greetings.class
 leetcode\LengthOfLastWord.class
@@ -121,6 +125,7 @@ leetcode\MinimumIndexSumOfTwoLists.class
 leetcode\UncommonWordsFromTwoSentences.class
 leetcode\RangeSumQueryImmutable.class
 leetcode\DesignHashSet.class
+leetcode\UniqueEmailAddresses.class
 Solution.class
 leetcode\CanPlaceFlowers.class
 leetcode\LongPressedName.class
