@@ -1,8 +1,3 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-# Idea files
-.idea
-#STS
-.classhpath
-.calss
