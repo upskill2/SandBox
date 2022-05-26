@@ -1,0 +1,23 @@
+cats and dogs
+987-123-4567
+123 456 7890
+(123) 456-7890
+123
+02/12/03
+Put a \"string one"\ between double \"string two"\ quotes
+the word is mine this island
+firts line\r\nsecond line
+i like my pig
+SetValue
+color is colour
+Nov November
+Sep 17, September 17th, Sep 17th, September 17
+<h1>
+This is a <EM>first</EM> second
+*\\d+**\\d+*
+EditPad Pro Version
+@
+western
+wensday
+xz az spshwp qwe
+(999) 555
