@@ -1,2 +1,4 @@
-package leetcode;public class DuplicateZeros {
+package leetcode;
+
+public class DuplicateZeros {
 }

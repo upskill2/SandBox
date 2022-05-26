@@ -50,7 +50,7 @@ public class VerifyingAnAlienDictionaryTest {
                 () -> assertTrue(va.isAlienSorted(words3, order3)),
                 () -> assertFalse(va.isAlienSorted(words4, order4)),
                 () -> assertTrue(va.isAlienSorted(words5, order5)),
-                () -> assertFalse(va.isAlienSorted(words6, order6))
+                () -> assertTrue(va.isAlienSorted(words6, order6))
         );
 
     }

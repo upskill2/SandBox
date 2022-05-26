@@ -21,6 +21,9 @@ public class ValidPhoneNumbers {
                 Pattern pattern = Pattern.compile("([(])?\\d{3}([)])?(\\s)?([-])?[0-9]{3}-[0-9]{4}"); //udemy https://www.youtube.com/watch?v=hCz2M_q7UC0&ab_channel=УрокиJava
                                                             //java doc https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
                                                             // [+/-] literal - exact match inside
+
+                //Lookbehind https://www.regular-expressions.info/lookaround.html
+
                                                             // []\^$.|?*+() -- \\-skip metacharacter
                                                             // "\\Qcat\\E" - exact match inside Q-E
                                                             // "[0-5a-z]" - any number between 0-5 and chars a-z
