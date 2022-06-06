@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.tests.LinkedListFromScratch;
+import leetcode.resources.LinkedListFromScratch;
 
 import java.util.NoSuchElementException;
 

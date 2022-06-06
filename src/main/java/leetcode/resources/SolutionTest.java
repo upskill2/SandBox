@@ -1,4 +1,5 @@
-package leetcode.tests;
+package leetcode.resources;
+
 
 public class SolutionTest {
 

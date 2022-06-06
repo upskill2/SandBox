@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.tests.SinglyLinkedList;
+import leetcode.resources.SinglyLinkedList;
 
 public class MiddleOfTheLinkedList extends SinglyLinkedList {
 

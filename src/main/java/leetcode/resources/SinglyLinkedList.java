@@ -1,32 +1,46 @@
-package leetcode.tests;
+package leetcode.resources;
 
-public class LinkedListFromScratch {
+public class SinglyLinkedList<T> {
+
+    private int size = 0;
 
     public ListNode head;
-    public ListNode tail;   //not singly linked
-
 
     public void add(int val) {
 
         if (this.head == null) {
             this.head = new ListNode(val);
-            this.tail = new ListNode(val); //not singly linked
+            size++;
         } else {
 
-            ListNode nodeToAdd = new ListNode(val);
+           ListNode nodeToAdd = new ListNode(val);
             nodeToAdd.next = this.head;
             this.head = nodeToAdd;
+            size++;
         }
+    }
+
+    public int size(){
+        return size;
     }
 
     public void show() {
 
-        ListNode node = head;
+     ListNode node = head;
         while (node.next != null) {
             System.out.println(node.data);
             node = node.next;
         }
         System.out.println(node.data);
+    }
+
+    public void removeFirst(){
+        ListNode currentNode = head;
+
+        head = currentNode.next;
+        currentNode.next=currentNode.next.next;
+
+        size--;
     }
 
 
@@ -48,6 +62,5 @@ public class LinkedListFromScratch {
         }
 
     }
-
 
 }

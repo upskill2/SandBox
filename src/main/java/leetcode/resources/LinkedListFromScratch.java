@@ -1,32 +1,27 @@
-package leetcode.tests;
+package leetcode.resources;
 
-public class SinglyLinkedList<T> {
+public class LinkedListFromScratch {
 
-    private int size = 0;
+    public ListNode head;
+    public ListNode tail;   //not singly linked
 
-    public SinglyLinkedList.ListNode head;
 
     public void add(int val) {
 
         if (this.head == null) {
-            this.head = new SinglyLinkedList.ListNode(val);
-            size++;
+            this.head = new ListNode(val);
+            this.tail = new ListNode(val); //not singly linked
         } else {
 
-            SinglyLinkedList.ListNode nodeToAdd = new SinglyLinkedList.ListNode(val);
+            ListNode nodeToAdd = new ListNode(val);
             nodeToAdd.next = this.head;
             this.head = nodeToAdd;
-            size++;
         }
-    }
-
-    public int size(){
-        return size;
     }
 
     public void show() {
 
-        SinglyLinkedList.ListNode node = head;
+        ListNode node = head;
         while (node.next != null) {
             System.out.println(node.data);
             node = node.next;
@@ -38,7 +33,7 @@ public class SinglyLinkedList<T> {
     public class ListNode {
 
         public int data;
-        public SinglyLinkedList.ListNode next;
+        public ListNode next;
 
         ListNode() {
         }
@@ -47,11 +42,12 @@ public class SinglyLinkedList<T> {
             this.data = d;
         }
 
-        ListNode(int d, SinglyLinkedList.ListNode next) {
+        ListNode(int d, ListNode next) {
             this.data = d;
             this.next = next;
         }
 
     }
+
 
 }
