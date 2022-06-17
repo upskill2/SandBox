@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 
 public class Test {
 
+
     public static void main(String[] args) {
         Test test = new Test();
         test.setField1(new Field("field1"));
