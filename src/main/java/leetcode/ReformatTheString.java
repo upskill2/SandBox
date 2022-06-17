@@ -7,7 +7,7 @@ public class ReformatTheString {
 
     public String reformat(String s) {
 
-        List<Integer> numList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
         List<Character> charList = new ArrayList<>();
 
         int numCount = 0;
@@ -17,7 +17,7 @@ public class ReformatTheString {
         for (char ch : s.toCharArray()
         ) {
             if (Character.isDigit(ch)) {
-                numList.add((int) ch);
+                numList.add(String.valueOf(ch));
                 numCount++;
             } else {
                 charList.add(ch);
@@ -26,16 +26,26 @@ public class ReformatTheString {
 
         }
 
-        if (numCount - charCount < 0) {
+        if (Math.abs(numCount-charCount)>1) {
+            res = new StringBuilder("");
+        } else if (numCount - charCount ==-1) {
             while (res.length() < s.length()) {
                 for (int i = 0; i < charList.size(); i++) {
+                    if(i==charList.size()-1){
+                        res.append(charList.get(i));
+                    } else
+
                     res.append(charList.get(i)).append(numList.get(i));
                 }
             }
 
-        } else if (numCount - charCount > 0) {
+        } else if (numCount - charCount == 1) {
             while (res.length() < s.length()) {
                 for (int i = 0; i < numList.size(); i++) {
+                    if(i==numList.size()-1){
+                        res.append(numList.get(i));
+                    }
+                    else
                     res.append(numList.get(i)).append(charList.get(i));
                 }
             }
@@ -51,8 +61,13 @@ public class ReformatTheString {
 
         String s = "a0b1c2";
         String s1 = "leetcode";
+        String s2 = "covid2019";
+        String s3 = "a12bcd";
 
-    //    ref.reformat(s);
-        ref.reformat(s1);
+        //    ref.reformat(s);
+      //  ref.reformat(s1);
+    //    ref.reformat(s2);
+        ref.reformat(s3);
     }
+
 }
