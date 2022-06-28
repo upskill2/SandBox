@@ -1,59 +1,49 @@
 package leetcode.resources;
 
-import java.util.*;
+import leetcode.MakeTheStringGreat;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 class Solution {
-    public String[] findRestaurant(String[] list1, String[] list2) {
+    public String makeGood(String s) {
 
-        Map<String, Integer> mapFinal = new HashMap<>();
-        List<Integer> list = new ArrayList<>();
+        Stack<Character> stack = new Stack<>();
 
-        for (int i = 0; i < list1.length; i++) {
-            for (int j = 0; j < list2.length; j++) {
-                if (list1[i] == list2[j]) {
-                    mapFinal.put(list1[i], i + j);
-                    list.add(i+j);
-                    break;
-                }
+        for(int i=0; i<s.length(); i++){
+
+            char c = s.charAt(i);
+
+            if(!stack.isEmpty() && Character.isUpperCase(c) &&
+                    Character.toLowerCase(c) == stack.peek()
+                    || !stack.isEmpty() && Character.isUpperCase(stack.peek()) &&
+                    c == Character.toLowerCase(stack.peek())) {
+
+                stack.pop();
+
             }
+            else
+                stack.push(c);
         }
 
-        Collections.sort(list);
-        int minValue= list.get(0);
+        String str = "";
+        while(!stack.isEmpty())
+            str = stack.pop() + str;
 
-        int listSize=0;
-        for (int k : list
-        ) {if(k==minValue){
-            listSize++;
-        }    }
-
-        //int minValue = Collections.min(mapFinal.values());
-        //int listSize = Collections.frequency(mapFinal.values(), minValue);
-        String[] result = new String[listSize];
-
-        int idx = 0;
-        while (idx < listSize) {
-
-            result[idx] = getKeys(mapFinal, minValue).get(idx);
-            idx++;
-        }
-
-
-        return result;
+        return str;
     }
 
-    private static List<String> getKeys(Map<String, Integer> mapFinal, int minValue) {
-        List<String> result1 = new ArrayList<>();
-        if (mapFinal.containsValue(minValue)) {
-            for (Map.Entry entry : mapFinal.entrySet()
-            ) {
-                if (Objects.equals(entry.getValue(), minValue)) {
-                    result1.add((String) entry.getKey());
-                }
 
-            }
-        }
-        System.out.println(System.currentTimeMillis());
-        return result1;
+    public static void main(String[] args) {
+        Solution mk = new Solution();
+
+        String s = "leEeetcode";
+        String s1 = "abBAcC";
+        String s2 = "s";
+
+                mk.makeGood(s);
+        //      mk.makeGood(s1);
+      //  mk.makeGood(s2);
     }
 }
