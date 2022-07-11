@@ -14,7 +14,7 @@ class KMP_String_Matching {
         // array)
         computeLPSArray(pat, M, lps);
 
-        int i = 0; // index for txt[]
+       int i = 0; // index for txt[]
         while (i < N) {
             if (pat.charAt(j) == txt.charAt(i)) {
                 j++;
