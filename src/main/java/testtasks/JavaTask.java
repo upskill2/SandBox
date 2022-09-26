@@ -1,9 +1,7 @@
 package testtasks;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 public class JavaTask implements JavaTaskInterface {
 
@@ -78,22 +76,6 @@ public class JavaTask implements JavaTaskInterface {
         }
         System.out.format("Number %d is Not found in the list", target);
         return -1;
-    }
-
-    public List<Integer> getList() {
-        return list;
-    }
-
-    public void setList(List<Integer> list) {
-        this.list = list;
-    }
-
-    public int getTarget() {
-        return target;
-    }
-
-    public void setTarget(int target) {
-        this.target = target;
     }
 
 }
