@@ -1,3 +1,4 @@
+--change "my_db." schema to the actual schema name
 select t.Name as TEAM_NAME, j.goals_for as GOALS_FOR, j.goals_agains as GOALS_AGAINST, sum(k.points) as POINTS from (
 select m.host_team as team, case
 when m.host_goals > m.guest_goals then 3
