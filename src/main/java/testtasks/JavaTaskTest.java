@@ -12,7 +12,7 @@ public class JavaTaskTest {
     @Test
     public void testJavaTask() {
 
-
+        //test with dupes
         List<Integer> list = new ArrayList<>(List.of(1, 2, 3, 4, 2, 3));
         int target = 5;
 
@@ -22,6 +22,7 @@ public class JavaTaskTest {
         List<Integer> list2 = new ArrayList<>(List.of(1, 2));
         int target2 = 2;
 
+        //test with negative numbers
         List<Integer> list3 = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 8, -5, 10, -1));
         int target3 = 5;
 
