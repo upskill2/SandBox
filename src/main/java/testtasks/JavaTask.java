@@ -42,8 +42,6 @@ public class JavaTask implements JavaTaskInterface {
                 }
             }
             myMap.put(element, diff);
-
-
         }
 
         //1.3 When using map, sorting doesn't matter. However, depends on a data structure
@@ -58,6 +56,7 @@ public class JavaTask implements JavaTaskInterface {
         list.add(n);
 
         int idx = list.size() - 1;
+        //logging
         System.out.format("Number %d is added into the list", idx);
 
         return idx;
@@ -69,11 +68,13 @@ public class JavaTask implements JavaTaskInterface {
 
         for (int s : list) {
             if (s == target) {
+                //logging
                 System.out.format("Number %d is found in the list", target);
                 return target;
             }
-
         }
+
+        //logging
         System.out.format("Number %d is Not found in the list", target);
         return -1;
     }

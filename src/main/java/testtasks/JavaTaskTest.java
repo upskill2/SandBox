@@ -32,13 +32,10 @@ public class JavaTaskTest {
         int res2 = jt.countPairs(list2, target2);
         int res3 = jt.countPairs(list3, target3);
 
-
         assertEquals(2, res);
         assertEquals(1, res1);
         assertEquals(0, res2);
         assertEquals(4, res3);
-
-
     }
 
 }
