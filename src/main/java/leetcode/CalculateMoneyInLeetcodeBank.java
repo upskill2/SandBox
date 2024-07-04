@@ -6,32 +6,21 @@ import java.util.List;
 public class CalculateMoneyInLeetcodeBank {
     public int totalMoney(int n) {
 
-        List<Integer> myList = new ArrayList<>();
-
         int res = 0;
-        int increment = 0;
-        int anotherIcr = 0;
+        int increment = 1;
+        int weeks = 0;
+        for (int i = 1; i <= n; i++) {
 
-        int temp = n / 7;
-        for (int i = 1; i < n + 1; i++) {
+            res += increment + weeks;
+            increment++;
 
-
-            anotherIcr = n > 13 ? 9 : 7;
-
-            //13 -8
-            //26-9
-
-            if (i > 6 + temp) {
-                increment = i / 7 * 6;
+            if (increment > 7) {
+                weeks++;
+                increment = 1;
             }
+            String s = "";
 
-
-            res = i + res - increment;
-            myList.add(i - increment);
         }
-/*        if (temp > 7) {
-            res = res - (temp - 7) * 6; 114/6==19
-        }*/
 
         return res;
     }
@@ -44,10 +33,10 @@ public class CalculateMoneyInLeetcodeBank {
         int n3 = 26;
         int n4 = 141;
 
-/*      c.totalMoney(n);
-        c.totalMoney(n1);
+        System.out.println(c.totalMoney(n));
+        System.out.println(c.totalMoney(n1));
         c.totalMoney(n2);
-        c.totalMoney(n3);*/
+        c.totalMoney(n3);
         c.totalMoney(n4);
     }
 }

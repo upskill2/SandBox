@@ -1,14 +1,23 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class CheckIfStringIsAPrefixOfArray {
 
     public boolean isPrefixString(String s, String[] words) {
 
-        StringBuilder sb = new StringBuilder(Arrays.stream(words).toString());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+           ;
+            sb.append(words[i]);
+          String s1 =  sb.toString();
+            if (sb.toString().equals(s)) {
+                return true;
+            }
+        }
 
-        return true;
+        return false;
 
     }
 
@@ -17,7 +26,7 @@ public class CheckIfStringIsAPrefixOfArray {
 
         String s = "iloveleetcode", words[] = {"i", "love", "leetcode", "apples"};
 
-        ar.isPrefixString(s,words);
+        System.out.println(ar.isPrefixString(s, words));
     }
 
 }
