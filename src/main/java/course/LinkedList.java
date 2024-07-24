@@ -1,3 +1,5 @@
+package course;
+
 public class LinkedList {
 
     private Node head;

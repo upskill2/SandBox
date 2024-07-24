@@ -38,25 +38,25 @@ public class Main {
             set.add(num);
         }
 
-        if(set.size()==1) return 1;
+        if (set.size() == 1) return 1;
 
         int max = 0;
 
         int prev = 0;
         int temp = 0;
-        for (int num: set){
+        for (int num : set) {
             final int i = num - prev;
-            if(i ==1){
+            if (i == 1) {
                 prev = num;
                 temp++;
                 max = Integer.max(max, temp);
             } else {
-                temp =1;
+                temp = 1;
                 prev = num;
             }
         }
 
-            return max;
+        return max;
 
     }
 
@@ -255,13 +255,56 @@ public class Main {
 
     }
 
+    private static void swap(int[] array, int firstIndex, int secondIndex) {
+        int temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
+    }
+
+
+    public static int pivot(int[] arr, int pivotIdx, int endIdx) {
+        int swapIdx = pivotIdx;
+
+        for (int i = pivotIdx + 1; i <= endIdx; i++) {
+            if (arr[i] < arr[pivotIdx]) {
+                swapIdx++;
+                swap(arr, swapIdx, i);
+            }
+
+        }
+
+        swap(arr, pivotIdx, swapIdx);
+        return swapIdx;
+    }
+
+
     public static boolean hasUniqueChars(String string) {
         Set<Character> set = string.chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
         return set.size() == string.length();
     }
 
+    public static void quickSortHelper(int[] arr, int left, int right){
+
+        if(left>right) return;
+
+        int pivot = pivot(arr, left, right);
+        quickSortHelper(arr, left, pivot-1);
+        quickSortHelper(arr, pivot+1, right);
+
+    }
+
 
     public static void main(String[] args) {
+
+        int[] myArray = {4, 6, 1, 7, 3, 2, 5};
+
+        int returnedIndex = pivot(myArray, 0, 6);
+
+        System.out.println("Returned Index: " + returnedIndex);
+
+        System.out.println(Arrays.toString(myArray));
+
+
         System.out.println(firstNonRepeatingChar("leetcode"));
         System.out.println(firstNonRepeatingChar("hello"));
         System.out.println(firstNonRepeatingChar("aabbcc"));
@@ -292,7 +335,8 @@ public class Main {
 
         List<int[]> pairs = findPairs(arr1, arr2, target);
 
-        System.out.println(longestConsecutiveSequence(new int[]{ 1, 0, -1, -2, -3 }));
+        System.out.println(longestConsecutiveSequence(new int[]{1, 0, -1, -2, -3}));
+
 
     }
 

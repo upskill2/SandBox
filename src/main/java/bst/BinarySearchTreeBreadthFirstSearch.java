@@ -1,9 +1,6 @@
 package bst;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 
 public class BinarySearchTreeBreadthFirstSearch {
@@ -150,7 +147,7 @@ public class BinarySearchTreeBreadthFirstSearch {
             }
         }
 
-        for (int i = idx+1; i < integers.size(); i++) {
+        for (int i = idx + 1; i < integers.size(); i++) {
             if (integers.get(i) < value) {
                 return false;
             }
@@ -158,6 +155,77 @@ public class BinarySearchTreeBreadthFirstSearch {
         return true;
     }
 
+    public Integer kthSmallest(int k) {
+        if (root.left == null && root.right==null) return null;
+
+
+        Stack<Node> stack = new Stack<>();
+        Node current = root;
+
+        kHelper(stack, current);
+
+       /* while (current != null) {
+            stack.push(current);
+            current = current.left;
+        }
+
+        current = root.right;
+        while (current != null) {
+            stack.push(current);
+            current = current.right;
+        }*/
+
+        int res = 0;
+            for (int i = 0; i < k; i++) {
+                res = stack.pop().value;
+            }
+
+
+        return res;
+    }
+
+    public Integer kthSmallestCorrect(int k) {
+        Stack<Node> stack = new Stack<>();
+        Node node = this.root;
+
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            k -= 1;
+            if (k == 0) {
+                return node.value;
+            }
+            node = node.right;
+        }
+        return null;
+    }
+
+    private void kHelper(Stack<Node> stack, Node currentNode) {
+
+        if (currentNode == null) return;
+        kHelper(stack, currentNode.left);
+        stack.push(currentNode);
+        kHelper(stack, currentNode.right);
+
+    }
+
+    public static void main(String[] args) {
+        BinarySearchTreeBreadthFirstSearch bst = new BinarySearchTreeBreadthFirstSearch();
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(2);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(8);
+
+        System.out.println( bst.kthSmallest(3));
+
+
+    }
 
 
 }
